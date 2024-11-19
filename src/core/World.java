@@ -15,7 +15,7 @@ public class World {
     private static final int MAXROOMSIZE = 15;
     private static final int MINROOMSIZE = 5;
 
-    private TETile[][] world;
+    public TETile[][] world;
     private final TERenderer ter = new TERenderer();
 
     Random random;
