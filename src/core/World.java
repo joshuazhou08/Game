@@ -35,6 +35,7 @@ public class World {
         random = new Random(seed);
         rooms = new HashSet<>();
         halls = new HashMap<>();
+        this.createWorld();
     }
 
     //call this to redraw the world

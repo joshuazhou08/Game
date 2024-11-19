@@ -18,7 +18,6 @@ public class WorldGenDemos {
             }
             seed = random.nextInt();
             World test = new World(seed);
-            test.createWorld();
             test.render();
         }
 
