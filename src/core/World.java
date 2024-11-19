@@ -37,6 +37,19 @@ public class World {
         halls = new HashMap<>();
         this.createWorld();
     }
+    //Spawn the player
+
+    public ArrayList<Integer> spawn() {
+        int x; int y;
+        x = random.nextInt(96);
+        y = random.nextInt(46);
+        while (world[x][y] != Tileset.FLOOR) {
+            x = random.nextInt(96);
+            y = random.nextInt(46);
+        }
+        world[x][y] = Tileset.AVATAR;
+        return new ArrayList<>(Arrays.asList(x, y));
+    }
 
     //call this to redraw the world
     public void render() {
