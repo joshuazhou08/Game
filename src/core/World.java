@@ -36,12 +36,12 @@ public class World {
         random = new Random(seed);
         rooms = new HashSet<>();
         halls = new HashMap<>();
+        ter.initialize(WIDTH, HEIGHT);
         this.createWorld();
     }
 
     //call this to redraw the world
     public void render() {
-        ter.initialize(WIDTH, HEIGHT);
         ter.renderFrame(world);
     }
 
