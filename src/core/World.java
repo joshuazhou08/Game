@@ -10,12 +10,13 @@ import java.util.*;
 
 public class World {
 
+    public TETile[][] world;
+
+    //WORLD GENERATION
     private static final int WIDTH = 100;
     private static final int HEIGHT = 50;
     private static final int MAXROOMSIZE = 15;
     private static final int MINROOMSIZE = 5;
-
-    public TETile[][] world;
     private final TERenderer ter = new TERenderer();
 
     Random random;
@@ -36,19 +37,6 @@ public class World {
         rooms = new HashSet<>();
         halls = new HashMap<>();
         this.createWorld();
-    }
-    //Spawn the player
-
-    public ArrayList<Integer> spawn() {
-        int x; int y;
-        x = random.nextInt(96);
-        y = random.nextInt(46);
-        while (world[x][y] != Tileset.FLOOR) {
-            x = random.nextInt(96);
-            y = random.nextInt(46);
-        }
-        world[x][y] = Tileset.AVATAR;
-        return new ArrayList<>(Arrays.asList(x, y));
     }
 
     //call this to redraw the world
